@@ -39,7 +39,8 @@ class _UniversitiesScreenState extends State<UniversitiesScreen> {
       });
     } catch (e) {
       setState(() {
-        _errorMsg = 'No se pudo obtener la lista de universidades.\nVerifica tu conexión e inténtalo de nuevo.';
+        _errorMsg =
+            'No se pudo obtener la lista de universidades.\nVerifica tu conexión e inténtalo de nuevo.';
         _estado = _Estado.error;
       });
     }
@@ -124,7 +125,7 @@ class _UniversitiesScreenState extends State<UniversitiesScreen> {
         return ListView.separated(
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
           itemCount: _universidades.length,
-          separatorBuilder: (_, _) => const SizedBox(height: 10),
+          separatorBuilder: (context, index) => const SizedBox(height: 10),
           itemBuilder: (context, index) {
             final u = _universidades[index];
             return Card(
@@ -139,7 +140,8 @@ class _UniversitiesScreenState extends State<UniversitiesScreen> {
                         const CircleAvatar(
                           radius: 18,
                           backgroundColor: AppTheme.universidades,
-                          child: Icon(Icons.school, color: Colors.white, size: 18),
+                          child:
+                              Icon(Icons.school, color: Colors.white, size: 18),
                         ),
                         const SizedBox(width: 10),
                         Expanded(
@@ -156,10 +158,12 @@ class _UniversitiesScreenState extends State<UniversitiesScreen> {
                     const SizedBox(height: 8),
                     Row(
                       children: [
-                        const Icon(Icons.language, size: 15, color: Colors.black45),
+                        const Icon(Icons.language,
+                            size: 15, color: Colors.black45),
                         const SizedBox(width: 4),
                         Text(u.primaryDomain,
-                            style: const TextStyle(color: Colors.black54, fontSize: 13)),
+                            style: const TextStyle(
+                                color: Colors.black54, fontSize: 13)),
                       ],
                     ),
                     if (u.primaryWebPage.isNotEmpty) ...[
@@ -172,7 +176,8 @@ class _UniversitiesScreenState extends State<UniversitiesScreen> {
                           label: const Text('Visitar sitio web'),
                           style: OutlinedButton.styleFrom(
                             foregroundColor: AppTheme.universidades,
-                            side: const BorderSide(color: AppTheme.universidades),
+                            side:
+                                const BorderSide(color: AppTheme.universidades),
                           ),
                         ),
                       ),

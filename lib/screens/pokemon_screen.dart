@@ -58,7 +58,8 @@ class _PokemonScreenState extends State<PokemonScreen> {
     final url = _pokemon?.cryUrl;
     if (url == null || url.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('No hay sonido disponible para este Pokémon.')),
+        const SnackBar(
+            content: Text('No hay sonido disponible para este Pokémon.')),
       );
       return;
     }
@@ -169,18 +170,20 @@ class _PokemonScreenState extends State<PokemonScreen> {
                       width: 150,
                       height: 150,
                       fit: BoxFit.contain,
-                      errorBuilder: (_, _, _) => const Icon(
+                      errorBuilder: (context, error, stackTrace) => const Icon(
                         Icons.catching_pokemon,
                         size: 100,
                         color: Colors.black26,
                       ),
                     )
                   else
-                    const Icon(Icons.catching_pokemon, size: 100, color: Colors.black26),
+                    const Icon(Icons.catching_pokemon,
+                        size: 100, color: Colors.black26),
                   const SizedBox(height: 8),
                   Text(
                     p.nombreCapitalizado,
-                    style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 24, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -221,7 +224,8 @@ class _PokemonScreenState extends State<PokemonScreen> {
                       SizedBox(width: 8),
                       Text(
                         'Habilidades',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15),
                       ),
                     ],
                   ),
@@ -231,9 +235,12 @@ class _PokemonScreenState extends State<PokemonScreen> {
                     runSpacing: 6,
                     children: p.abilities
                         .map((a) => Chip(
-                              label: Text(a, style: const TextStyle(fontSize: 12)),
-                              backgroundColor: AppTheme.pokemonAmarillo.withValues(alpha: 0.3),
-                              side: const BorderSide(color: AppTheme.pokemonAmarillo),
+                              label:
+                                  Text(a, style: const TextStyle(fontSize: 12)),
+                              backgroundColor: AppTheme.pokemonAmarillo
+                                  .withValues(alpha: 0.3),
+                              side: const BorderSide(
+                                  color: AppTheme.pokemonAmarillo),
                             ))
                         .toList(),
                   ),
@@ -251,14 +258,18 @@ class _PokemonScreenState extends State<PokemonScreen> {
                 child: Icon(Icons.volume_up, color: Colors.black87),
               ),
               title: const Text('Sonido del Pokémon'),
-              subtitle: Text(p.cryUrl != null ? 'Cry disponible' : 'No disponible'),
+              subtitle:
+                  Text(p.cryUrl != null ? 'Cry disponible' : 'No disponible'),
               trailing: ElevatedButton.icon(
-                onPressed: (p.cryUrl != null && !_reproduciendo) ? _reproducirSonido : null,
+                onPressed: (p.cryUrl != null && !_reproduciendo)
+                    ? _reproducirSonido
+                    : null,
                 icon: _reproduciendo
                     ? const SizedBox(
                         width: 16,
                         height: 16,
-                        child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                        child: CircularProgressIndicator(
+                            strokeWidth: 2, color: Colors.white),
                       )
                     : const Icon(Icons.play_arrow),
                 label: const Text('Reproducir'),
