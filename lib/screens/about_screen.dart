@@ -51,7 +51,8 @@ class AboutScreen extends StatelessWidget {
                         width: 114,
                         height: 114,
                         fit: BoxFit.cover,
-                        errorBuilder: (_, _, _) => const Icon(
+                        errorBuilder: (context, error, stackTrace) =>
+                            const Icon(
                           Icons.person,
                           size: 70,
                           color: AppTheme.primary,
@@ -89,8 +90,8 @@ class AboutScreen extends StatelessWidget {
                       SizedBox(width: 12),
                       Expanded(
                         child: Text(
-                          'Desarrollador apasionado por la tecnología móvil y las aplicaciones multiplataforma con Flutter. '
-                          'Disponible para proyectos freelance y oportunidades laborales.',
+                          'Desarrollador de software con un enfoque sólido en arquitectura Full-Stack, desarrollo móvil y automatización de procesos.  '
+                          'Estudiante del Instituto Tecnológico de Las Américas (ITLA). Especializado en el diseño de arquitecturas MVC, aplicaciones web progresivas (PWA) y la integración de inteligencia artificial para resolver problemas complejos de gestión de datos, con particular interés en el cumplimiento normativo fiscal de la República Dominicana y la auditoría de TI.',
                           style: TextStyle(color: Colors.black87, height: 1.5),
                         ),
                       ),
@@ -128,8 +129,10 @@ class AboutScreen extends StatelessWidget {
                   ),
                   title: const Text('Email'),
                   subtitle: const Text('josueroman3005@gmail.com'),
-                  trailing: const Icon(Icons.open_in_new, size: 16, color: Colors.black38),
-                  onTap: () => _abrirUrl(context, 'mailto:josueroman3005@gmail.com'),
+                  trailing: const Icon(Icons.open_in_new,
+                      size: 16, color: Colors.black38),
+                  onTap: () =>
+                      _abrirUrl(context, 'mailto:josueroman3005@gmail.com'),
                 ),
               ),
             ),
@@ -145,7 +148,8 @@ class AboutScreen extends StatelessWidget {
                   ),
                   title: const Text('LinkedIn'),
                   subtitle: const Text('Josue Fondeur Roman'),
-                  trailing: const Icon(Icons.open_in_new, size: 16, color: Colors.black38),
+                  trailing: const Icon(Icons.open_in_new,
+                      size: 16, color: Colors.black38),
                   onTap: () => _abrirUrl(
                     context,
                     'https://www.linkedin.com/in/josue-fondeur-roman-56560533a/',
@@ -165,8 +169,10 @@ class AboutScreen extends StatelessWidget {
                   ),
                   title: const Text('GitHub'),
                   subtitle: const Text('github.com/Romanqwert'),
-                  trailing: const Icon(Icons.open_in_new, size: 16, color: Colors.black38),
-                  onTap: () => _abrirUrl(context, 'https://github.com/Romanqwert'),
+                  trailing: const Icon(Icons.open_in_new,
+                      size: 16, color: Colors.black38),
+                  onTap: () =>
+                      _abrirUrl(context, 'https://github.com/Romanqwert'),
                 ),
               ),
             ),

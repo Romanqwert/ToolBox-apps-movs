@@ -36,7 +36,8 @@ class _NewsScreenState extends State<NewsScreen> {
       });
     } catch (e) {
       setState(() {
-        _errorMsg = 'No se pudieron cargar las noticias.\nVerifica tu conexión e inténtalo de nuevo.';
+        _errorMsg =
+            'No se pudieron cargar las noticias.\nVerifica tu conexión e inténtalo de nuevo.';
         _estado = _Estado.error;
       });
     }
@@ -150,22 +151,25 @@ class _NewsScreenState extends State<NewsScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // Imagen destacada
-          if (noticia.featuredImageUrl != null && noticia.featuredImageUrl!.isNotEmpty)
+          if (noticia.featuredImageUrl != null &&
+              noticia.featuredImageUrl!.isNotEmpty)
             Image.network(
               noticia.featuredImageUrl!,
               height: 160,
               fit: BoxFit.cover,
-              errorBuilder: (_, _, _) => Container(
+              errorBuilder: (context, error, stackTrace) => Container(
                 height: 80,
                 color: AppTheme.noticias.withValues(alpha: 0.1),
-                child: const Icon(Icons.article, color: AppTheme.noticias, size: 40),
+                child: const Icon(Icons.article,
+                    color: AppTheme.noticias, size: 40),
               ),
             )
           else
             Container(
               height: 60,
               color: AppTheme.noticias.withValues(alpha: 0.1),
-              child: const Icon(Icons.article_outlined, color: AppTheme.noticias, size: 32),
+              child: const Icon(Icons.article_outlined,
+                  color: AppTheme.noticias, size: 32),
             ),
 
           Padding(
@@ -175,7 +179,8 @@ class _NewsScreenState extends State<NewsScreen> {
               children: [
                 // Numero de noticia
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                   decoration: BoxDecoration(
                     color: AppTheme.noticias,
                     borderRadius: BorderRadius.circular(4),
@@ -183,7 +188,9 @@ class _NewsScreenState extends State<NewsScreen> {
                   child: Text(
                     'Noticia ${index + 1}',
                     style: const TextStyle(
-                        color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold),
+                        color: Colors.white,
+                        fontSize: 11,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
                 const SizedBox(height: 8),
@@ -191,7 +198,8 @@ class _NewsScreenState extends State<NewsScreen> {
                 // Titulo
                 Text(
                   noticia.title,
-                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 15),
                 ),
                 const SizedBox(height: 6),
 
@@ -201,7 +209,8 @@ class _NewsScreenState extends State<NewsScreen> {
                     noticia.excerpt.length > 180
                         ? '${noticia.excerpt.substring(0, 180)}...'
                         : noticia.excerpt,
-                    style: const TextStyle(color: Colors.black54, fontSize: 13, height: 1.4),
+                    style: const TextStyle(
+                        color: Colors.black54, fontSize: 13, height: 1.4),
                   ),
                 const SizedBox(height: 12),
 
