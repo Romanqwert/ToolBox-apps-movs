@@ -91,7 +91,7 @@ class AboutScreen extends StatelessWidget {
                       Expanded(
                         child: Text(
                           'Desarrollador de software con un enfoque sólido en arquitectura Full-Stack, desarrollo móvil y automatización de procesos.  '
-                          'Estudiante del Instituto Tecnológico de Las Américas (ITLA). Especializado en el diseño de arquitecturas MVC, aplicaciones web progresivas (PWA) y la integración de inteligencia artificial para resolver problemas complejos de gestión de datos, con particular interés en el cumplimiento normativo fiscal de la República Dominicana y la auditoría de TI.',
+                          'Especializado en el diseño de arquitecturas MVC, aplicaciones web progresivas (PWA) y la integración de inteligencia artificial para resolver problemas complejos de gestión de datos, con particular interés en el cumplimiento normativo fiscal de la República Dominicana y la auditoría de TI.',
                           style: TextStyle(color: Colors.black87, height: 1.5),
                         ),
                       ),
